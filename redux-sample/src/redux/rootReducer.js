@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 import { count } from "./count/reducer";
 
 // 全てのreducerを１つにまとめる
-const rootReducer = combineReducers({const});
+const rootReducer = combineReducers({ count });
 
 export default rootReducer;
+
