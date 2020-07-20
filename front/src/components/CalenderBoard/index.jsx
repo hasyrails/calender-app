@@ -1,4 +1,6 @@
 import React from "react";
+import { GridList } from "@material-ui/core";
+
 import CalendarElement from "../CalendarElement";
 
 import { GridList, Typography } from "@material-ui/core";
