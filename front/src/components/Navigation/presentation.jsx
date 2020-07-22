@@ -19,8 +19,7 @@ const StyledTypography = withStyles({
   root: { margin: "0 30px 0 10px" }
 })(Typography);
 
-const Navigation = ({ setNextMonth, setPreviousMonth }) => {
-  const [selectedDate, handleDateChange] = useState(new Date());
+const Navigation = ({ setNextMonth, setPreviousMonth, setMonth, month }) => {
   return (
     <StyledToolbar>
       <IconButton>
@@ -37,8 +36,8 @@ const Navigation = ({ setNextMonth, setPreviousMonth }) => {
         <ArrowForwardIos />
       </IconButton>
       <StyledDatePicker
-        value={selectedDate}
-        onChange={handleDateChange}
+        value={month}
+        onChange={setMonth}
         variant="inline"
         format="YYYY年 M月"
         animateYearScrolling
