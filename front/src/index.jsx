@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 
 import { Provider } from "react-redux";
 import { createStore } from "redux";
+import DayjsUnits from "@date-io/dayjs";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 
 import CalendarBoard from "./components/CalendarBoard/container";
 
@@ -18,10 +20,11 @@ const store = createStore(rootReducer);
 
 const App = () => (
   <Provider store={store}>
-    <Navigation />
-    <CalendarBoard />
+    <MuPickerUtilsProvider utils={DayjsUtils}>
+      <Navigation />
+      <CalendarBoard />
+    </MuPickerUtilsProvider>
   </Provider>
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));
-
