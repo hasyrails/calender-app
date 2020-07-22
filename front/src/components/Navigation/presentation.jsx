@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { DatePicker } from "@material-ui/pickers";
 
 import { IconButton, Toolbar, Typography, withStyles } from "@material-ui/core";
 
@@ -10,11 +11,16 @@ const StyledToolbar = withStyles({
   root: { padding: "0" }
 })(Toolbar);
 
+const StyledDatePicker = withStyles({
+  root: { marginLeft: 30 }
+})(DatePicker);
+
 const StyledTypography = withStyles({
   root: { margin: "0 30px 0 10px" }
 })(Typography);
 
 const Navigation = ({ setNextMonth, setPreviousMonth }) => {
+  const [selectedDate, handleDateChange] = useState(new Date());
   return (
     <StyledToolbar>
       <IconButton>
@@ -30,6 +36,14 @@ const Navigation = ({ setNextMonth, setPreviousMonth }) => {
       <IconButton size="small" onClick={setNextMonth}>
         <ArrowForwardIos />
       </IconButton>
+      <StyledDatePicker
+        value={selectedDate}
+        onChange={handleDateChange}
+        variant="inline"
+        format="YYYY年 M月"
+        animateYearScrolling
+        disableToolbar
+      />
     </StyledToolbar>
   );
 };
