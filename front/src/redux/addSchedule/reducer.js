@@ -5,6 +5,7 @@ import {
 } from "./actions";
 
 import dayjs from "dayjs";
+dayjs.locale('ja');
 
 const init = {
   form: {
