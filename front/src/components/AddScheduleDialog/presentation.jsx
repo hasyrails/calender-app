@@ -26,7 +26,7 @@ const Title = withStyles({
 
 const AddScheduleDialog = ({ 
   schedule: {
-    form: { title, location, description },
+    form: { title, location, description, date },
     isDialogOpen
   },
   closeDialog,
@@ -48,6 +48,8 @@ const AddScheduleDialog = ({
           </Grid>
           <Grid item xs={10}>
             <DatePicker
+              value={date}
+              onChange={d => setSchedule({ date: d })}
               variant="inline"
               format="YYYY年M月D日"
               animateYearScrolling
