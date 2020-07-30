@@ -33,7 +33,8 @@ const AddScheduleDialog = ({
     isDialogOpen
   },
   closeDialog,
-  setSchedule
+  setSchedule,
+  saveSchedule
 }) => {
   return (
     <Dialog open={isDialogOpen} onClose={closeDialog} maxWidth="xs" fullWidth>
