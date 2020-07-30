@@ -18,6 +18,8 @@ import Navigation from "./components/Navigation/container";
 
 import AddScheduleDialog from "./components/AddScheduleDialog/container";
 
+import CurrentScheduleDialog from "./components/CurrentScheduleDialog/container";
+
 const store = createStore(rootReducer);
 
 const App = () => (
@@ -26,6 +28,7 @@ const App = () => (
       <Navigation />
       <CalendarBoard />
       <AddScheduleDialog />
+      <CurrentScheduleDialog />
     </MuiPickersUtilsProvider>
   </Provider>
 );
