@@ -12,5 +12,5 @@ export const currentScheduleOpenDialog = () => ({
 });
 
 export const currentScheduleCloseDialog = () => ({
-  type: CURRENT_SCHEDULE_SET_ITEM,
+  type: CURRENT_SCHEDULE_CLOSE_DIALOG,
 });

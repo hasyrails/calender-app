@@ -11,8 +11,8 @@ const CalendarBoard = ({
   calendar,
   month,
   openAddScheduleDialog,
+  openCurrentScheduleDialog
 }) => {
-  console.log(calendar);
   return (
     <div className={styles.container}>
       <GridList className={styles.grid} cols={7} spacing={0} cellHeight="auto">
@@ -34,7 +34,12 @@ const CalendarBoard = ({
             key={date.toISOString()}
             onClick={() => openAddScheduleDialog(date)}
           >
-            <CalendarElement day={date} month={month} schedules={schedules} />
+            <CalendarElement
+              day={date}
+              month={month}
+              schedules={schedules}
+              onClickSchedule={openCurrentScheduleDialog}
+            />
           </li>
         ))}
       </GridList>
