@@ -14,17 +14,36 @@ dayjs.locale("ja");
 
 import rootReducer from "./redux/rootReducer";
 
+import ToDos from "./components/todos"
+
 import Navigation from "./components/Navigation/container";
 
 import AddScheduleDialog from "./components/AddScheduleDialog/container";
 
 import CurrentScheduleDialog from "./components/CurrentScheduleDialog/container";
 
+import styled, { createGlobalStyle } from 'styled-components'
+
 const store = createStore(rootReducer);
+
+const GlobalStyle = createGlobalStyle`
+html, body, app {
+height: 100%;
+}
+body {
+/* https://css-tricks.com/snippets/css/system-font-stack/ */
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+  overflow-wrap: break-word;
+}
+`
+
 
 const App = () => (
   <Provider store={store}>
     <MuiPickersUtilsProvider utils={DayjsUtils}>
+      <ToDos />
       <Navigation />
       <CalendarBoard />
       <AddScheduleDialog />
@@ -33,4 +52,9 @@ const App = () => (
   </Provider>
 );
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+<>
+  <GlobalStyle />
+    <App />,
+</>,
+ document.getElementById("root"));
